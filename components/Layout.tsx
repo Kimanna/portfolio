@@ -19,7 +19,7 @@ export default function Layout(props: Props) {
     console.log("🚀 ~ file: Layout.tsx ~ line 19 ~ Layout ~ Layout")
 
     return (
-        <div className="w-full p-0">
+        <div className="">
             {/* <NavBar /> */}
             {props.children}
         </div>

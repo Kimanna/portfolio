@@ -38,6 +38,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 npm i dotenv
 
+// tailwind css 적용
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
@@ -45,3 +46,12 @@ postcss.config.js 파일안에 내용은 추가한것임.
 
 참고
 https://tailwindcss.com/docs/guides/nextjs
+
+
+//material ui 적용으로 변경
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+
+//scss 설치
+npm install --save-dev sass
+

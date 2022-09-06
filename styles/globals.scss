@@ -1,0 +1,200 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* 
+global css
+*/
+
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap);
+
+//상속해서 사용할 폰트 스타일 정의
+%light-white {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+%regular-white {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+%medium-white {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+%bold-white {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+%light-black {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    color: #000000;
+}
+
+%regular-black {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    color: #000000;
+}
+
+%medium-black {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    color: #000000;
+}
+
+%bold-black {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
+    color: #000000;
+}
+
+//색깔 정의
+$darkBlue: #05152E;
+$pink: #EE2757;
+$red: #D93025;
+$blue: #063FEC;
+$lightGray: #F8F8F8;
+$darkGray: #E4E4E4;
+$darkGrayText : #A2A2A2;
+$grayLine: #e3e3e3;
+
+//페이지에 표시할 페이지명
+.pageInfo {
+    @extend %bold-black;
+    font-size: 27px;
+
+    @media (max-width: 768px) {
+        font-size: 22px;
+    }
+}
+
+//소제목 div
+.sectionTitleDiv {
+    margin-top: 30px !important;
+
+    @media (max-width: 768px) {
+        margin-top: 12px !important;
+    }
+}
+
+//데이터가 없을 때
+.noData {
+    @extend %regular-black;
+    font-size: 14px;
+    color: $darkGrayText;
+    text-align: center;
+    min-height: 50px;
+}
+
+//공지사항, 이용약관.. 페이지의 서비스명
+.infoPage-serviceName {
+    margin: 0 24px;
+    margin-bottom: 24px;
+    cursor: pointer;
+
+    @media (max-width: 680px) {
+        margin: 0 16px;
+        margin-bottom: 20px;
+    }
+}
+
+//미디어 쿼리
+// @mixin phone1 {
+//     @media (max-width: 320px) {
+//         @content;
+//     }
+// }
+
+// @mixin phone2 {
+//     @media (max-width: 480px) {
+//         @content;
+//     }
+// }
+
+// @mixin tablet {
+//     @media (max-width: 768px) {
+//         @content;
+//     }
+// }
+
+// @mixin laptop {
+//     @media (max-width: 1024px) {
+//         @content;
+//     }
+// }
+
+// ***** Breakpoints for Responsive Screen
+// width scale for phone
+$phone-min-width: 320px !default;
+$phone-max-width: 504px !default;
+// height scale for phone
+$phone-min-height: 346px !default;
+$phone-max-height: 695px !default;
+// width scale for tablet
+$tablet-min-width: 480px !default;
+$tablet-max-width: 1024px !default;
+// height scale for tablet
+$tablet-min-height: 800px !default;
+$tablet-max-height: 1440px !default;
+// Desktop Scale
+$desktop-min-height: 768px !default;
+$desktop-max-height: 1280px !default;
+
+// Mixins
+// For portrait phone and landscape phone
+@mixin phone() {
+    @media screen and (min-width: $phone-min-width) and (max-height: $phone-max-height) {
+        @content;
+    }
+}
+
+// For portrait phone
+@mixin portrait-phone() {
+    @media screen and (min-width: $phone-min-width) and (max-width: $phone-max-width) and (orientation: portrait) {
+        @content;
+    }
+}
+
+// For landscape phone
+@mixin landscape-phone() {
+    @media screen and (min-height: $phone-min-height) and (max-height: $phone-max-height) and (orientation: landscape) {
+        @content;
+    }
+}
+
+// For portrait tablet and landscape tablet
+@mixin tablet() {
+    @media screen and (min-width: $tablet-min-width) and (max-height: $tablet-max-height) {
+        @content;
+    }
+}
+
+// For portrait tablet
+@mixin portrait-tablet() {
+    @media screen and (min-width: $tablet-min-width) and (max-width: $tablet-max-width) and (orientation: portrait) {
+        @content;
+    }
+}
+
+// For landscape tablet
+@mixin landscape-tablet() {
+    @media screen and (min-height: $tablet-min-height) and (max-height: $tablet-max-height) and (orientation: landscape) {
+        @content;
+    }
+}
+
+// For desktop
+@mixin desktop() {
+    @media screen and (min-height: $desktop-min-height) and (max-height: $desktop-max-height) {
+        @content;
+    }
+}
